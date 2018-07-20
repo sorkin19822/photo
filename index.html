@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/png">
+    <title>Галлерея</title>
+
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.9/js/uikit-icons.min.js"></script>
+
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="albums.js"></script>
+</head>
+<body>
+<div class="wrapper uk-margin-small uk-card uk-card-default uk-card-body uk-flex">
+<div class="content">
+<div uk-grid class="uk-margin-small-top">
+    <div class="uk-width-1-1">
+        <!-- This is a button toggling the modal -->
+        <button class="uk-button uk-button-default uk-margin-small-right about" onclick="imageCount()"  type="button" uk-toggle="target: #modal-example">О пользователе</button>
+        <button class="uk-button uk-button-default uk-margin-small-right albums" onclick="albums()"  type="button">Альбомы</button>
+
+    </div>
+</div>
+
+<div uk-grid class="blockContent">
+
+</div>
+
+
+    <div class="footer"></div>
+
+</div>
+</div>
+
+
+
+
+<!-- This is the modal -->
+<div id="modal-example" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">Данные о профиле</h2>
+        <div class="modalBody"></div>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+        </p>
+    </div>
+</div>
+<span uk-spinner="ratio: 4.5" class="loaderImage"></span>
+</body>
+</html>

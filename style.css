@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
+    height: 100vh;
+}
+.wrapper{
+    height: 100%;
+}
+
+.topWrap{
+    padding: 20px;
+}
+
+.loaderImage {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 135px;
+    height: 135px;
+    display: none;
+}
