@@ -1,13 +1,15 @@
 body{
-    display: flex;
+/*    display: flex;
     flex-direction: column;
     min-width: 100vw;
-    height: 100vh;
+    height: 100vh;*/
 }
 .wrapper{
     height: 100%;
 }
-
+.content{
+    width: 100%;
+}
 .topWrap{
     padding: 20px;
 }
@@ -22,4 +24,11 @@ body{
     width: 135px;
     height: 135px;
     display: none;
+}
+.filter{
+    max-width:300px;
+}
+
+.commentCreate{
+    cursor: pointer;
 }
