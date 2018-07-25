@@ -20,17 +20,35 @@
 
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script src="albums.js"></script>
 </head>
 <body>
+
+
 <div class="wrapper uk-margin-small uk-card uk-card-default uk-card-body uk-flex">
 <div class="content">
 <div uk-grid class="uk-margin-small-top">
-    <div class="uk-width-1-1">
+    <div class="uk-width-1-2@m uk-flex-middle uk-flex">
         <!-- This is a button toggling the modal -->
-        <button class="uk-button uk-button-default uk-margin-small-right about" onclick="imageCount()"  type="button" uk-toggle="target: #modal-example">О пользователе</button>
-        <button class="uk-button uk-button-default uk-margin-small-right albums" onclick="albums()"  type="button">Альбомы</button>
+        <button class="uk-button uk-button-default uk-margin-small-right about" onclick="imageAccount()"  type="button" uk-toggle="target: #modal-example">О пользователе</button>
+        <button class="uk-button uk-button-default uk-margin-small-right about uk-hidden" onclick=""  type="button" uk-toggle="target: #modal-example1">Загрузим фото</button>
+        <button class="uk-button uk-button-default uk-margin-small-right albums" onclick="albums()"  type="button">Все альбомы</button>
 
+    </div>
+    <div class="uk-width-1-2@m">
+        <form class="filter">
+            <fieldset class="uk-fieldset">
+
+                <legend class="uk-legend">Выбрать конкретный альбом</legend>
+
+                <div class="uk-margin">
+                    <select class="uk-select selectAlbums">
+
+                    </select>
+                </div>
+
+
+            </fieldset>
+        </form>
     </div>
 </div>
 
@@ -51,13 +69,60 @@
 <div id="modal-example" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
         <button class="uk-modal-close-default" type="button" uk-close></button>
-        <h2 class="uk-modal-title">Данные о профиле</h2>
-        <div class="modalBody"></div>
+        <h2 class="uk-modal-title modalTitle">Данные о профиле</h2>
+        <div class="modalBody" uk-overflow-auto></div>
         <p class="uk-text-right">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
         </p>
     </div>
 </div>
+
+<!-- This is the modal -->
+<div id="modal-example1" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h2 class="uk-modal-title">Заполните форму</h2>
+        <div class="modalBody">
+            <form>
+
+                <div class="uk-margin">
+                    <div uk-form-custom>
+                        <input type="file">
+                        <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
+                    </div>
+                </div>
+
+                <div class="uk-margin">
+                    <span class="uk-text-middle">Here is a text</span>
+                    <div uk-form-custom>
+                        <input type="file">
+                        <span class="uk-link">upload</span>
+                    </div>
+                </div>
+
+                <div class="uk-margin" uk-margin>
+                    <div uk-form-custom="target: true">
+                        <input type="file">
+                        <input class="uk-input uk-form-width-medium" type="text" placeholder="Select file" disabled>
+                    </div>
+                    <button class="uk-button uk-button-default">Submit</button>
+                </div>
+
+            </form>
+
+        </div>
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
 <span uk-spinner="ratio: 4.5" class="loaderImage"></span>
 </body>
 </html>
